@@ -1,4 +1,4 @@
 package edu.cs.security25.item;
 
-public class item {
+public class ItemService {
 }
