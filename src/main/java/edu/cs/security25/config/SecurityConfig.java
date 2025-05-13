@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import static edu.cs.security25.config.BeansConfiguration.passwordEncoder;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -27,10 +29,6 @@ public class SecurityConfig {
         return AuthorizationManagerBeforeMethodInterceptor.preAuthorize();
     }
 
-    @Bean
-    public static PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
